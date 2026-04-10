@@ -3,16 +3,16 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
-import Header from './HeaderSection/header'
+import Header from './HeaderSection/Header'
+import FounderDetails from './FounderSection/FounderDetails'
 function App() {
-
 
   return (
     <div className='App'>
-      <Header/>
-      <h1>Hello</h1>
+      <Header />
+      <FounderDetails />
     </div>
-   
+
   )
 }
 

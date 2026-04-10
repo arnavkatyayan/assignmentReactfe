@@ -185,29 +185,3 @@
     border-right-color: var(--border);
   }
 }
-
-.header-class {
-  background-color: black;
-  height: 10vh;
-  position: relative;
-}
-
-.logo {
-  position: absolute;
-  left: 0;
-}
-
-.nav-links {
-  position: absolute;
-  right: 0;
-}
-
-.display-image {
-  position: absolute;
-  top: 96px;
-}
-
-.display-image-dimensions {
-  width: 2049px;
-  height: 565px;
-}
