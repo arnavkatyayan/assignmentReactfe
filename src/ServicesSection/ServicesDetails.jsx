@@ -1,5 +1,10 @@
 import React from "react";
-
+import psych from "../assets/PsychiatricEvaluation.webp";
+import psych2 from "../assets/PsychiatricEvaluation2.webp";
+import psych3 from "../assets/PsychiatricEvaluation3.webp";
+import psych4 from "../assets/PsychiatricEvaluation4.webp";
+import psych5 from "../assets/PsychiatricEvaluation5.webp";
+import psych6 from "../assets/PsychiatricEvaluation6.webp";
 export default function ServicesDetails() {
     const treatmentFocus = [
         {
@@ -25,6 +30,33 @@ export default function ServicesDetails() {
         },
     ];
 
+    const services = [
+        {
+            title: "Psychiatric Evaluation",
+            icon: psych,
+        },
+        {
+            title: "Medication Management",
+            icon: psych2,
+        },
+        {
+            title: "Supportive Psychotherapy",
+            icon: psych3,
+        },
+        {
+            title: "ADHD Screening",
+            icon: psych4,
+        },
+        {
+            title: "MAT Treatment",
+            icon: psych5,
+        },
+        {
+            title: "Gene Sight Testing",
+            icon: psych6,
+        },
+    ];
+
     return (
         <div className="w-full bg-[#FBF6EC] py-20">
             <h1 className="text-4xl font-bold text-center mb-20">
@@ -38,7 +70,6 @@ export default function ServicesDetails() {
                         className={`grid grid-cols-2 gap-20 items-center ${index % 2 !== 0 ? "direction-rtl" : ""
                             }`}
                     >
-                        {/* Image */}
                         <div
                             className={`flex ${index % 2 !== 0 ? "justify-end order-2" : "justify-start"
                                 }`}
@@ -50,7 +81,6 @@ export default function ServicesDetails() {
                             />
                         </div>
 
-                        {/* Text */}
                         <div className={`${index % 2 !== 0 ? "order-1" : ""}`}>
                             <h2 className="text-3xl font-semibold mb-6">{item.title}</h2>
                             <p className="text-lg leading-9 text-gray-700 mb-6">
@@ -64,33 +94,24 @@ export default function ServicesDetails() {
                 ))}
             </div>
 
-            {/* Black quote section */}
             <div className="mt-24 bg-black py-20 text-center text-white relative">
                 <p className="text-4xl text-[#C18C2C] mb-4">❝</p>
                 <p className="text-2xl font-semibold">
                     We help people living with and experiencing difficult times
                 </p>
             </div>
-            {/* Services Section */}
             <div className="bg-[#FBF6EC] py-20">
                 <h2 className="text-5xl font-semibold text-center mb-16">
                     Our Services
                 </h2>
 
                 <div className="max-w-6xl mx-auto grid grid-cols-6 gap-8 text-center mb-16">
-                    {[
-                        "Psychiatric Evaluation",
-                        "Medication Management",
-                        "Supportive Psychotherapy",
-                        "ADHD Screening",
-                        "MAT Treatment",
-                        "Gene Sight Testing",
-                    ].map((service, index) => (
+                    {services.map((service, index) => (
                         <div key={index} className="flex flex-col items-center">
                             <div className="w-20 h-20 rounded-full bg-[#F5EEDC] border border-[#C18C2C] flex items-center justify-center mb-4">
-                                <span className="text-2xl text-[#C18C2C]">✦</span>
+                                <span className="text-2xl text-[#C18C2C]"><img src={service.icon} alt="" /></span>
                             </div>
-                            <p className="text-lg font-medium leading-7">{service}</p>
+                            <p className="text-lg font-medium leading-7">{service.title}</p>
                         </div>
                     ))}
                 </div>
@@ -101,7 +122,6 @@ export default function ServicesDetails() {
                     </button>
                 </div>
 
-                {/* Why choose section */}
                 <div className="bg-[#F5EEDC] py-20">
                     <div className="max-w-6xl mx-auto grid grid-cols-2 gap-16 items-center">
                         <div>

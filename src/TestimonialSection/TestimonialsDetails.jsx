@@ -26,25 +26,25 @@ export default function Testimonials() {
     ];
 
     return (
-        <div className="bg-[#FBF6EC] py-24">
+        <div className="bg-[#FBF6EC] pt-12 pb-24 top-0">
             <h2 className="text-5xl font-semibold text-center mb-16">
                 What Our Patients Are Saying
             </h2>
 
-            <div className="max-w-7xl mx-auto grid grid-cols-3 gap-8">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
                 {testimonials.map((item, index) => (
                     <div
                         key={index}
-                        className="bg-[#F7F1E4] rounded-2xl overflow-hidden shadow-sm"
+                        className="bg-[#F7F1E4] rounded-2xl overflow-hidden shadow-sm flex flex-col h-full"
                     >
-                        <div className="p-10 min-h-[260px]">
-                            <p className="text-5xl mb-6">❝</p>
+                        <div className="p-10 flex-grow flex flex-col justify-center min-h-[300px]">
+                            <p className="text-5xl mb-6 text-[#C18C2C]">❝</p>
                             <p className="text-lg leading-8 text-gray-700">
                                 {item.text}
                             </p>
                         </div>
 
-                        <div className={`bg-[#C18C2C] px-8 py-5 flex items-center gap-4 ${index > 0 ? "mt-15" : ""}`}>
+                        <div className="bg-[#C18C2C] px-8 py-5 flex items-center gap-4 mt-auto">
                             <img
                                 src={item.image}
                                 alt={item.name}
@@ -59,14 +59,12 @@ export default function Testimonials() {
                 ))}
             </div>
 
-            {/* dots */}
             <div className="flex justify-center gap-3 mt-10">
                 <div className="w-3 h-3 rounded-full bg-[#C18C2C]" />
                 <div className="w-3 h-3 rounded-full border border-[#C18C2C]" />
                 <div className="w-3 h-3 rounded-full border border-[#C18C2C]" />
                 <div className="w-3 h-3 rounded-full border border-[#C18C2C]" />
             </div>
-            {/* Four Simple Steps */}
             <div className="bg-black py-24 text-white mt-10">
                 <h2 className="text-5xl font-semibold text-center mb-16">
                     Four Simple Steps To <br /> Get Started
@@ -92,7 +90,6 @@ export default function Testimonials() {
                         },
                     ].map((item, index) => (
                         <div key={index} className="flex flex-col items-center">
-                            {/* icon circle */}
                             <div className="w-20 h-20 rounded-full border border-[#C18C2C] flex items-center justify-center mb-6">
 
                                 <span className="text-2xl text-[#C18C2C]">{item.step}</span>
