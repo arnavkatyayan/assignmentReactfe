@@ -1,4 +1,5 @@
 import React from "react";
+import Logo from "../assets/logo.png";
 export default function StatesFaqFooter() {
     const states = [
         {
@@ -40,17 +41,25 @@ export default function StatesFaqFooter() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-14">
                     {states.map((state) => (
                         <div key={state.name} className="text-center group cursor-pointer">
-                            <div className="w-[240px] h-[140px] mx-auto overflow-hidden rounded-t-full rounded-b-none">
+                            <div className="w-[240px] h-[140px] mx-auto overflow-hidden rounded-t-full rounded-b-none transition-all duration-500 group-hover:rounded-full group-hover:h-[240px]">
                                 <img
                                     src={state.image}
                                     alt={state.name}
-                                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:h-[220px]"
-                                />
+                                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
                             </div>
                             <h3 className="mt-4 text-2xl font-serif">{state.name}</h3>
                             <p className="text-sm text-gray-600 mt-1">{state.type}</p>
                         </div>
                     ))}
+                    {/* <div className="group cursor-pointer text-center">
+  <div className="w-[240px] h-[140px] mx-auto overflow-hidden rounded-t-full rounded-b-none transition-all duration-500 group-hover:rounded-full group-hover:h-[240px]">
+    <img
+      src={state.image}
+      alt={state.name}
+      className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
+    />
+  </div>
+</div> */}
                 </div>
 
                 <div className="mt-20 max-w-4xl mx-auto">
@@ -113,10 +122,33 @@ export default function StatesFaqFooter() {
                         <p className="text-sm text-gray-300">Monday - Thursday</p>
                         <p className="text-sm text-gray-300">09:00 AM - 04:00 PM</p>
                     </div>
-
                     <div>
-                        <h4 className="text-[#C18C2C] mb-4">ADA PSYCHIATRY</h4>
-                        <p className="text-sm text-gray-300">Chandler, Arizona</p>
+                        <ul>
+                            <li>
+                                <div className="flex items-center gap-3 whitespace-nowrap">
+                                    <img src={Logo} alt="Logo" className="w-10 h-10" />
+                                    <p className="text-amber-50 font-semibold text-lg md:text-xl">
+                                        ADA PSYCHIATRY
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h4 className="text-[#C18C2C] mb-4">Locate us</h4>
+                                    <p className="text-sm text-gray-300 mt-1">
+                                        1920 E Ray Road, STE 401, Chandler, Arizona 85225
+                                    </p>
+
+                                    <h4 className="text-[#C18C2C] mb-4 mt-5">Follow us</h4>
+                                    <div className="flex gap-3 mt-2 text-sm text-gray-300">
+                                        <span>Instagram</span>
+                                        <span>Facebook</span>
+                                        <span>LinkedIn</span>
+                                    </div>
+                                </div>
+
+                            </li>
+                        </ul>
                     </div>
                 </div>
 

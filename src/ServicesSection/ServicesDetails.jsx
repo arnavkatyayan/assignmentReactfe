@@ -56,7 +56,7 @@ export default function ServicesDetails() {
                             <p className="text-lg leading-9 text-gray-700 mb-6">
                                 {item.description}
                             </p>
-                            <button className="px-6 py-3 rounded-full bg-gradient-to-r from-[#C18C2C] via-[#FCF38A] to-[#C18C2C]">
+                            <button className="px-6 py-3 rounded-full bg-gradient-to-r from-[#C18C2C] via-[#FCF38A] to-[#C18C2C] text-[#16171d] font-semibold text-[15px] cursor-pointer hover:opacity-90 transition-opacity">
                                 Learn More →
                             </button>
                         </div>
