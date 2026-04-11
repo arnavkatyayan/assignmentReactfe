@@ -1,10 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "../assets/logo.png";
 import display from "../assets/display.png";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const heroImages = [
+        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1600&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?q=80&w=1600&auto=format&fit=crop",
+        // "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1600&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop",
+    ];
+    const [index, setIndex] = useState(0);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIndex((prevIndex) =>
+                prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
+            );
+        }, 5000);
 
+        return () => clearInterval(interval);
+    }, []);
     return (
         <div className="w-full">
             <header className="bg-black w-full px-6 md:px-12 py-4 flex justify-between items-center">
@@ -45,8 +60,43 @@ export default function Header() {
                 </div>
             )}
 
-            <div className="w-full relative">
-                <img src={display} alt="display image" className="w-full h-[300px] md:h-[450px] lg:h-[565px] object-cover object-center block" />
+            <div className="relative w-full h-screen">
+                {/* Background image */}
+                <img
+                    src={heroImages[index]}
+                    alt="mental health"
+                    className="w-full h-full object-cover"
+                />
+
+                {/* Dark overlay left */}
+                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent" />
+
+                {/* Content */}
+                <div className="absolute top-1/2 left-16 -translate-y-1/2 text-white max-w-xl">
+                    <h1 className="text-6xl font-semibold leading-tight mb-6">
+                        NEED A MENTAL <br /> HEALTH PROVIDER?
+                    </h1>
+
+                    <p className="text-2xl mb-4">No Look Further</p>
+
+                    <p className="text-xl leading-9 text-gray-200 mb-8">
+                        Our goal is to provide a safe, comfortable, and warm environment so that
+                        you can openly discuss your mental health needs.
+                    </p>
+
+                    <button className="px-8 py-4 rounded-full bg-gradient-to-r from-[#C18C2C] via-[#FCF38A] to-[#C18C2C] text-black font-medium">
+                        Learn More →
+                    </button>
+
+                    {/* Slider dots */}
+                    {/* <div className="flex gap-4 mt-16">
+                        <div className="w-3 h-3 rounded-full bg-[#C18C2C]" />
+                        <div className="w-3 h-3 rounded-full border border-[#C18C2C]" />
+                        <div className="w-3 h-3 rounded-full border border-[#C18C2C]" />
+                        <div className="w-3 h-3 rounded-full border border-[#C18C2C]" />
+                        <div className="w-3 h-3 rounded-full border border-[#C18C2C]" />
+                    </div> */}
+                </div>
             </div>
         </div>
     );
