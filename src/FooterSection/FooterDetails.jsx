@@ -97,14 +97,14 @@ export default function StatesFaqFooter() {
                                 key={i}
                                 className="border-b border-[#d9cfbc] py-4"
                             >
-                                <div 
+                                <div
                                     className="flex items-center gap-4 cursor-pointer hover:text-[#C18C2C] transition-colors duration-300"
                                     onClick={() => handleFaqClick(i)}
                                 >
                                     <span className="text-2xl w-6 text-center">
                                         {openFaq === i ? '-' : '+'}
                                     </span>
-                                    <p className="text-lg">{faq.question}</p>
+                                    <p className="text-lg font-semibold">{faq.question}</p>
                                 </div>
                                 {openFaq === i && (
                                     <div className="mt-4 pl-10 text-gray-700">

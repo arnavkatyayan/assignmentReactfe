@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import psych from "../assets/PsychiatricEvaluation.webp";
 import psych2 from "../assets/PsychiatricEvaluation2.webp";
 import psych3 from "../assets/PsychiatricEvaluation3.webp";
@@ -6,6 +6,27 @@ import psych4 from "../assets/PsychiatricEvaluation4.webp";
 import psych5 from "../assets/PsychiatricEvaluation5.webp";
 import psych6 from "../assets/PsychiatricEvaluation6.webp";
 export default function ServicesDetails() {
+    const [openReason, setOpenReason] = useState(0);
+
+    const reasons = [
+        {
+            title: "Convenient access",
+            description: "We offer in-person and virtual psychiatry services where you can meet your provider in person or at the convenience of your own home.",
+        },
+        {
+            title: "Concierge approach",
+            description: "We provide highly personalized, direct care to ensure your specific needs are met promptly and comprehensively.",
+        },
+        {
+            title: "High quality service",
+            description: "Our dedicated professionals employ evidence-based approaches to deliver the best possible outcomes for your mental health.",
+        },
+        {
+            title: "Trusted and empathic providers",
+            description: "Our warm, compassionate team is committed to creating a safe, non-judgmental space for your journey to wellness.",
+        }
+    ];
+
     const treatmentFocus = [
         {
             title: "Mental health",
@@ -132,32 +153,32 @@ export default function ServicesDetails() {
                             />
                         </div>
 
-                        <div>
+                        <div className="flex flex-col gap-2">
                             <h2 className="text-5xl font-semibold mb-10">
-                                Why Should You Choose Ada Psychiatry?
+                                Why Should You Choose <br /> Ada Psychiatry?
                             </h2>
 
-                            <div className="space-y-6 text-2xl">
-                                <div className="border-b border-[#C18C2C] pb-4">
-                                    <p>— Convenient access</p>
-                                    <p className="text-lg text-gray-700 mt-3 leading-8">
-                                        We offer in-person and virtual psychiatry services where you can
-                                        meet your provider in person or at the convenience of your own
-                                        home.
-                                    </p>
-                                </div>
-
-                                <div className="border-b border-[#C18C2C] pb-4">
-                                    <p>+ Concierge approach</p>
-                                </div>
-
-                                <div className="border-b border-[#C18C2C] pb-4">
-                                    <p>+ High quality service</p>
-                                </div>
-
-                                <div>
-                                    <p>+ Trusted and empathic providers</p>
-                                </div>
+                            <div className="space-y-8 text-2xl">
+                                {reasons.map((reason, i) => (
+                                    <div key={i} className={`pb-4 ${i !== reasons.length - 1 ? "border-b border-[#C18C2C]" : ""}`}>
+                                        <div
+                                            className="flex items-center gap-3 cursor-pointer hover:text-[#C18C2C] transition-colors duration-300"
+                                            onClick={() => setOpenReason(openReason === i ? null : i)}
+                                        >
+                                            <span className="text-[#C18C2C] w-6 text-center">
+                                                {openReason === i ? '—' : '+'}
+                                            </span>
+                                            <p className="font-semibold">{reason.title}</p>
+                                        </div>
+                                        {openReason === i && (
+                                            <div className="mt-3 pl-9">
+                                                <p className="text-lg text-gray-700 leading-8">
+                                                    {reason.description}
+                                                </p>
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
