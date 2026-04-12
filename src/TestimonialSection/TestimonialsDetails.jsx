@@ -1,5 +1,8 @@
 import React from "react";
-
+import service1 from "../assets/Services1.webp"
+import service2 from "../assets/Services2.webp"
+import service3 from "../assets/Services3.webp"
+import service4 from "../assets/Services4.webp"
 export default function Testimonials() {
     const testimonials = [
         {
@@ -65,37 +68,45 @@ export default function Testimonials() {
                 <div className="w-3 h-3 rounded-full border border-[#C18C2C]" />
                 <div className="w-3 h-3 rounded-full border border-[#C18C2C]" />
             </div>
-            <div className="bg-black py-24 text-white mt-10">
-                <h2 className="text-5xl font-semibold text-center mb-16">
+            <div className="bg-black py-24 text-white mt-10 border-y-[5px] border-[#C18C2C]">
+                <p className="text-4xl font-semibold text-center mb-16 text-[#C18C2C] bg-gradient-to-r from-[#C18C2C] via-[#FCF38A] to-[#C18C2C] bg-clip-text">
                     Four Simple Steps To <br /> Get Started
-                </h2>
+                </p>
 
                 <div className="max-w-6xl mx-auto grid grid-cols-4 gap-8 text-center mb-16">
                     {[
                         {
+                            icon: service1,
                             step: "01",
                             title: "Schedule an appointment",
                         },
                         {
+                            icon: service2,
                             step: "02",
                             title: "Connect with your provider",
                         },
                         {
+                            icon: service3,
                             step: "03",
                             title: "Create your treatment plan",
                         },
                         {
+                            icon: service4,
                             step: "04",
                             title: "Begin your mental wellness journey",
                         },
                     ].map((item, index) => (
-                        <div key={index} className="flex flex-col items-center">
-                            <div className="w-20 h-20 rounded-full border border-[#C18C2C] flex items-center justify-center mb-6">
+                        <div key={index} className="relative flex flex-col items-center">
+                            <div className="relative w-20 h-20 flex items-center justify-center mb-6">
+                                <span className="text-2xl text-[#C18C2C]">
+                                    <img src={item.icon} alt="" className="w-10 h-10" />
+                                </span>
 
-                                <span className="text-2xl text-[#C18C2C]">{item.step}</span>
-
+                                {index < 3 && (
+                                    <div className="hidden lg:block absolute left-full top-1/2 -translate-y-1/2 w-[120px] ml-4 border-t-[4px] border-dotted border-[#C18C2C]"></div>
+                                )}
                             </div>
-
+                            <span className="text-2xl text-[#C18C2C]">{item.step}</span>
 
                             <p className="text-lg leading-8 max-w-[200px]">{item.title}</p>
                         </div>
