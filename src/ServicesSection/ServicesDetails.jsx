@@ -80,9 +80,9 @@ export default function ServicesDetails() {
 
     return (
         <div className="w-full bg-[#FBF6EC] py-20">
-            <h1 className="text-4xl font-bold text-center mb-20">
+            <h4 className="text-5xl font-semibold text-center mb-16">
                 Our Treatment Focus
-            </h1>
+            </h4>
 
             <div className="max-w-6xl mx-auto space-y-24">
                 {treatmentFocus.map((item, index) => (
