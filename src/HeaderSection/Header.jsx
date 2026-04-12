@@ -61,17 +61,14 @@ export default function Header() {
             )}
 
             <div className="relative w-full h-screen">
-                {/* Background image */}
                 <img
                     src={heroImages[index]}
                     alt="mental health"
                     className="w-full h-full object-cover"
                 />
 
-                {/* Dark overlay left */}
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent" />
 
-                {/* Content */}
                 <div className="absolute top-1/2 left-16 -translate-y-1/2 text-white max-w-xl">
                     <h1 className="text-6xl font-semibold leading-tight mb-6">
                         NEED A MENTAL <br /> HEALTH PROVIDER?
@@ -88,14 +85,6 @@ export default function Header() {
                         Learn More →
                     </button>
 
-                    {/* Slider dots */}
-                    {/* <div className="flex gap-4 mt-16">
-                        <div className="w-3 h-3 rounded-full bg-[#C18C2C]" />
-                        <div className="w-3 h-3 rounded-full border border-[#C18C2C]" />
-                        <div className="w-3 h-3 rounded-full border border-[#C18C2C]" />
-                        <div className="w-3 h-3 rounded-full border border-[#C18C2C]" />
-                        <div className="w-3 h-3 rounded-full border border-[#C18C2C]" />
-                    </div> */}
                 </div>
             </div>
         </div>
