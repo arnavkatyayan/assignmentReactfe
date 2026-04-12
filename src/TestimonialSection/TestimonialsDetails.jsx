@@ -114,7 +114,7 @@ export default function Testimonials() {
                 </div>
 
                 <div className="flex justify-center">
-                    <button className="px-10 py-4 rounded-full bg-gradient-to-r from-[#C18C2C] via-[#FCF38A] to-[#C18C2C] text-black font-medium">
+                    <button className="px-10 py-4 rounded-full bg-gradient-to-r from-[#C18C2C] via-[#FCF38A] to-[#C18C2C] text-black font-medium cursor-pointer">
                         Schedule a Call →
                     </button>
                 </div>

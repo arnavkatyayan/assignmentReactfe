@@ -29,7 +29,7 @@ export default function Header() {
                 </div>
 
                 <button
-                    className="lg:hidden text-amber-50 focus:outline-none"
+                    className="lg:hidden text-amber-50 focus:outline-none cursor-pointer"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -84,7 +84,7 @@ export default function Header() {
                         you can openly discuss your mental health needs.
                     </p>
 
-                    <button className="px-8 py-4 rounded-full bg-gradient-to-r from-[#C18C2C] via-[#FCF38A] to-[#C18C2C] text-black font-medium">
+                    <button className="px-8 py-4 rounded-full bg-gradient-to-r from-[#C18C2C] via-[#FCF38A] to-[#C18C2C] text-black font-medium cursor-pointer">
                         Learn More →
                     </button>
 

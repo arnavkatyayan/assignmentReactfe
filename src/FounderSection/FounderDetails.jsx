@@ -39,7 +39,7 @@ export default function FounderDetails() {
                         importantly, YOU ARE NOT THE RAIN.” — Matt Haig
                     </p>
 
-                    <button className="bg-[linear-gradient(90deg,_#C18C2C_0%,_#FCF38A_50.52%,_#C18C2C_100%)] text-[#16171d] font-semibold text-[15px] px-6 py-3 rounded-full cursor-pointer hover:opacity-90 transition-opacity w-fit self-center">
+                    <button className="bg-[linear-gradient(90deg,_#C18C2C_0%,_#FCF38A_50.52%,_#C18C2C_100%)] text-[#16171d] font-semibold text-[15px] px-6 py-3 rounded-full cursor-pointer hover:opacity-90 transition-opacity w-fit self-center cursor-pointer">
                         Learn More →
                     </button>
                 </div>

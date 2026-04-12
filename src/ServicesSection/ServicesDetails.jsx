@@ -94,7 +94,7 @@ export default function ServicesDetails() {
                 ))}
             </div>
 
-            <div className="mt-24 bg-black py-20 text-center text-white relative">
+            <div className="mt-24 bg-black py-20 text-center text-white relative border-y-[5px] border-[#C18C2C]">
                 <p className="text-4xl text-[#C18C2C] mb-4">❝</p>
                 <p className="text-2xl font-semibold">
                     We help people living with and experiencing difficult times
@@ -117,7 +117,7 @@ export default function ServicesDetails() {
                 </div>
 
                 <div className="flex justify-center mb-24">
-                    <button className="px-10 py-4 rounded-full bg-gradient-to-r from-[#C18C2C] via-[#FCF38A] to-[#C18C2C] font-medium">
+                    <button className="px-10 py-4 rounded-full bg-gradient-to-r from-[#C18C2C] via-[#FCF38A] to-[#C18C2C] font-medium cursor-pointer">
                         View our services →
                     </button>
                 </div>

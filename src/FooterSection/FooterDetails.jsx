@@ -1,6 +1,11 @@
 import React from "react";
 import Logo from "../assets/logo.png";
+import { useState } from "react";
 export default function StatesFaqFooter() {
+    const [openFaq, setOpenFaq] = useState(null);
+    const handleFaqClick = (index) => {
+        setOpenFaq(openFaq === index ? null : index);
+    };
     const states = [
         {
             name: 'Arizona',
@@ -22,11 +27,30 @@ export default function StatesFaqFooter() {
         },
     ];
 
+    // const faqs = [
+    //     'Is Ada psychiatry confidential?',
+    //     'What is the best way to schedule a appointment?',
+    //     'Do you prescribe controlled substance medication?',
+    //     'How long does the initial appointment take?',
+    // ];
+
     const faqs = [
-        'Is Ada psychiatry confidential?',
-        'What is the best way to schedule a appointment?',
-        'Do you prescribe controlled substance medication?',
-        'How long does the initial appointment take?',
+        {
+            question: 'Is Ada psychiatry confidential?',
+            answer: 'Yes, all appointments and discussions with our psychiatrists are strictly confidential. We adhere to HIPAA regulations to protect your privacy.',
+        },
+        {
+            question: 'What is the best way to schedule an appointment?',
+            answer: 'You can schedule an appointment by calling our office at [Phone Number] or by using our online booking system on the website. For new patients, we recommend scheduling an initial consultation to discuss your needs.',
+        },
+        {
+            question: 'Do you prescribe controlled substance medication?',
+            answer: 'Yes, our psychiatrists are licensed to prescribe controlled substances when medically necessary. Each case is evaluated individually to ensure safe and appropriate treatment.',
+        },
+        {
+            question: 'How long does the initial appointment take?',
+            answer: 'The initial consultation typically lasts between 45 to 60 minutes. This allows us to gather comprehensive information about your medical history, current concerns, and treatment goals.',
+        },
     ];
 
     return (
@@ -71,23 +95,35 @@ export default function StatesFaqFooter() {
                         {faqs.map((faq, i) => (
                             <div
                                 key={i}
-                                className="border-b border-[#d9cfbc] py-4 flex items-center gap-4"
+                                className="border-b border-[#d9cfbc] py-4"
                             >
-                                <span className="text-2xl">+</span>
-                                <p className="text-lg">{faq}</p>
+                                <div 
+                                    className="flex items-center gap-4 cursor-pointer hover:text-[#C18C2C] transition-colors duration-300"
+                                    onClick={() => handleFaqClick(i)}
+                                >
+                                    <span className="text-2xl w-6 text-center">
+                                        {openFaq === i ? '-' : '+'}
+                                    </span>
+                                    <p className="text-lg">{faq.question}</p>
+                                </div>
+                                {openFaq === i && (
+                                    <div className="mt-4 pl-10 text-gray-700">
+                                        <p className="leading-relaxed">{faq.answer}</p>
+                                    </div>
+                                )}
                             </div>
                         ))}
                     </div>
 
                     <div className="flex justify-center mt-10">
-                        <button className="px-10 py-3 rounded-full bg-gradient-to-r from-[#C18C2C] via-[#FCF38A] to-[#C18C2C] font-medium">
+                        <button className="px-10 py-3 rounded-full bg-gradient-to-r from-[#C18C2C] via-[#FCF38A] to-[#C18C2C] font-medium cursor-pointer hover:opacity-90 transition-opacity">
                             See all FAQ →
                         </button>
                     </div>
                 </div>
             </div>
 
-            <footer className="bg-black text-white mt-16">
+            <footer className="bg-black text-white mt-16 border-t-[5px] border-[#C18C2C]">
                 <div className="max-w-6xl mx-auto px-6 py-14 grid grid-cols-2 md:grid-cols-5 gap-8">
                     <div>
                         <h4 className="text-[#C18C2C] mb-4">Quick Links</h4>
@@ -139,11 +175,11 @@ export default function StatesFaqFooter() {
                                         1920 E Ray Road, STE 401, Chandler, Arizona 85225
                                     </p>
 
-                                    <h4 className="text-[#C18C2C] mb-4 mt-5">Follow us</h4>
+                                    <h4 className="text-[#C18C2C] mb-4 mt-5">Follow us on</h4>
                                     <div className="flex gap-3 mt-2 text-sm text-gray-300">
-                                        <span>Instagram</span>
-                                        <span>Facebook</span>
-                                        <span>LinkedIn</span>
+                                        <span className="cursor-pointer hover:text-[#C18C2C] transition-colors duration-300">Instagram</span>
+                                        <span className="cursor-pointer hover:text-[#C18C2C] transition-colors duration-300">Facebook</span>
+                                        <span className="cursor-pointer hover:text-[#C18C2C] transition-colors duration-300">LinkedIn</span>
                                     </div>
                                 </div>
 
@@ -152,8 +188,18 @@ export default function StatesFaqFooter() {
                     </div>
                 </div>
 
-                <div className="border-t border-gray-800 py-4 text-center text-xs text-gray-400">
-                    © Ada Psychiatry. All rights reserved.
+                <div
+                    className="border-t border-gray-800 py-4 text-center block cursor-pointer whitespace-nowrap"
+                    style={{
+                        fontWeight: 400,
+                        fontSize: '13px',
+                        lineHeight: '20px',
+                        fontFamily: '"Work Sans", sans-serif',
+                        color: '#fff',
+                        // marginBottom: '14px'
+                    }}
+                >
+                    © Ada Psychiatry. All rights reserved.2026
                 </div>
             </footer>
         </section>
